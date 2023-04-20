@@ -1,0 +1,28 @@
+import java.util.Random;
+import java.util.Scanner;
+
+public class ren002 {
+    public static void main(String[] args) {
+        Random random = new Random();
+        int randomNumber = random.nextInt(100) + 1;
+        Scanner scanner = new Scanner(System.in);
+        int guess;
+        int tries = 0;
+
+        System.out.println("1から100までの数を当ててください！");
+
+        do {
+            System.out.print("予想した数を入力してください：");
+            guess = scanner.nextInt();
+            tries++;
+
+            if (guess < randomNumber) {
+                System.out.println("もっと大きい数です！");
+            } else if (guess > randomNumber) {
+                System.out.println("もっと小さい数です！");
+            }
+        } while (guess != randomNumber);
+
+        System.out.println("正解です！" + tries + "回目で当てました！");
+    }
+}
